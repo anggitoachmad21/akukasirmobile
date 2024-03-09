@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="id.latenight.creativepos">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <!-- Request legacy Bluetooth permissions on older devices. -->
+    <uses-permission android:name="android.permission.BLUETOOTH"
+        android:maxSdkVersion="30" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"
+        android:maxSdkVersion="30" />
+
+    <!-- Needed only if your app makes the device discoverable to Bluetooth
+         devices. -->
+    <uses-permission android:name="android.permission.BLUETOOTH_ADVERTISE" />
+
+    <!-- Needed only if your app communicates with already-paired Bluetooth
+         devices. -->
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+
+    <!-- Needed only if your app uses Bluetooth scan results to derive physical location. -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+
+    <application
+        android:name=".util.MyApplication"
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@drawable/akukasirrr_3"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/akukasirrr_3"
+        android:supportsRtl="true"
+        android:testOnly="false"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        android:debuggable="true"
+        tools:ignore="AllowBackup,GoogleAppIndexingWarning,HardcodedDebugMode,UnusedAttribute">
+        <activity android:name=".mobile.InventoryTransferActivity" />
+        <activity android:name=".mobile.InventoryTransferDetailActivity" />
+        <activity
+            android:name=".mobile.InventoryTransferListActivity"
+            android:theme="@style/AppThemeMaterial" />
+        <activity
+            android:name=".mobile.InventoryReceiveListActivity"
+            android:theme="@style/AppThemeMaterial" />
+        <activity android:name=".mobile.CreateInventoryActivity" />
+        <activity android:name=".mobile.IngredientListActivity" />
+        <activity android:name=".mobile.CreateProductActivity" />
+        <activity android:name=".mobile.ProductListActivity" />
+        <activity android:name=".mobile.MenuInventoryActivity" />
+        <activity android:name=".mobile.ResetPasswordActivity" />
+        <activity android:name=".mobile.ProductionDetailActivity" />
+        <activity
+            android:name=".mobile.ProductionListActivity"
+            android:theme="@style/AppThemeMaterial" />
+        <activity
+            android:name=".mobile.SummaryReportGraphicActivity"
+            android:theme="@style/AppThemeMaterial" />
+        <activity
+            android:name=".mobile.SummaryReportAllOutletActivity"
+            android:theme="@style/AppThemeMaterial" />
+        <activity
+            android:name=".mobile.IncomeStatementActivity"
+            android:theme="@style/AppThemeMaterial" />
+        <activity android:name=".mobile.PurchaseOrderDetailActivity" />
+        <activity
+            android:name=".mobile.PurchaseOrderListActivity"
+            android:theme="@style/AppThemeMaterial" />
+        <activity android:name=".mobile.InventoryProductionActivity" />
+        <activity android:name=".mobile.PurchaseOrderActivity" />
+        <activity android:name=".mobile.InventoryReceiveDetailActivity" />
+        <activity android:name=".mobile.InventoryReceiveActivity" />
+        <activity android:name=".mobile.UpdateCartActivity" />
+        <activity
+            android:name=".mobile.SummaryReportActivity"
+            android:theme="@style/AppThemeMaterial" />
+        <activity android:name=".mobile.OpenRegisterActivity" />
+        <activity android:name=".mobile.DeleteSalesActivity" />
+        <activity android:name=".mobile.AdminActivity" />
+        <activity android:name=".mobile.HoldOrderActivity" />
+        <activity android:name=".mobile.MenuActivity" />
+        <activity android:name=".mobile.OrderDetailActivity" />
+        <activity android:name=".mobile.OrderHistoryActivity"
+                  android:theme="@style/AppThemeMaterial"/>
+        <activity android:name=".mobile.OrderRunningActivity"
+                  android:theme="@style/AppThemeMaterial"/>
+        <activity android:name=".mobile.MainActivity" />
+        <activity android:name=".util.DeviceActivity" />
+        <activity android:name=".mobile.LoginActivity" />
+        <activity android:name=".mobile.DailyReportDetail" />
+        <activity
+            android:name=".mobile.ExpenseActivity"
+            android:theme="@style/AppThemeMaterial" />
+        <activity android:name=".mobile.ExpenseFormActivity" />
+        <activity android:name=".mobile.ScanActivity" />
+        <activity android:name=".mobile.FirstActivity" />
+        <activity android:name=".mobile.ConversionActivity" />
+        <activity android:name=".mobile.MenuActivityN" />
+
+        <!--   Activity TABS     -->
+        <activity android:name=".tabs.MenuActivityTabs" android:screenOrientation="landscape"/>
+        <activity android:name=".tabs.MainActivityTabs" android:screenOrientation="landscape" />
+        <activity android:name=".tabs.LoginActivityTabs" android:screenOrientation="landscape" />
+        <activity android:name=".tabs.OrderDetailActivityTabs" android:screenOrientation="landscape"/>
+        <activity android:name=".tabs.OrderHistoryActivityTabs" android:screenOrientation="landscape"/>
+        <activity android:name=".tabs.OrderRunningActivityTabs" android:screenOrientation="landscape"/>
+        <activity android:name=".tabs.FirstActivityTabs" android:screenOrientation="landscape"  />
+        <activity android:name=".tabs.AdminActivityTabs" android:screenOrientation="landscape"  />
+        <activity android:name=".tabs.ExpenseActivityTabs" android:screenOrientation="landscape"  />
+        <activity android:name=".tabs.PurchaseOrderListActivityTabs" android:screenOrientation="landscape"  />
+        <activity android:name=".tabs.InventoryReceiveListActivityTabs" android:screenOrientation="landscape"  />
+        <activity android:name=".tabs.InventoryReceiveDetailActivityTabs" android:screenOrientation="landscape"  />
+        <activity android:name=".tabs.ProductionListActivityTabs" android:screenOrientation="landscape"  />
+        <activity android:name=".tabs.ProductionDetailActivityTabs" android:screenOrientation="landscape"  />
+        <activity android:name=".tabs.MenuInventoryActivityTabs" android:screenOrientation="landscape"  />
+        <activity android:name=".tabs.IngredientListActivityTabs" android:screenOrientation="landscape"  />
+        <activity android:name=".tabs.InventoryTransferListActivityTabs" android:screenOrientation="landscape"  />
+        <activity android:name=".tabs.InventoryTransferDetailActivityTabs" android:screenOrientation="landscape"  />
+        <activity android:name=".tabs.PurchaseOrderDetailActivityTabs" android:screenOrientation="landscape"  />
+        <activity android:name=".tabs.ExpenseFormActivityTabs" android:screenOrientation="landscape"  />
+        <activity android:name=".tabs.PurchaseOrderActivityTabs" android:screenOrientation="landscape"  />
+        <activity android:name=".tabs.InventoryReceiveActivityTabs" android:screenOrientation="landscape"  />
+        <activity android:name=".tabs.ConversionActivityTabs" android:screenOrientation="landscape"  />
+        <activity android:name=".tabs.ProductListActivityTabs" android:screenOrientation="landscape"  />
+        <activity android:name=".tabs.CreateProductActivityTabs" android:screenOrientation="landscape"  />
+        <activity android:name=".tabs.CreateInventoryActivityTabs" android:screenOrientation="landscape"  />
+        <activity android:name=".tabs.InventoryTransferActivityTabs" android:screenOrientation="landscape"  />
+        <activity android:name=".tabs.InventoryProductionActivityTabs" android:screenOrientation="landscape"  />
+        <activity
+            android:name=".tabs.SummaryReportGraphicActivityTabs"
+            android:theme="@style/AppThemeMaterial"
+            android:screenOrientation="landscape"/>
+        <activity
+            android:name=".tabs.SummaryReportAllOutletActivityTabs"
+            android:theme="@style/AppThemeMaterial"
+            android:screenOrientation="landscape"/>
+        <activity
+            android:name=".tabs.IncomeStatementActivityTabs"
+            android:theme="@style/AppThemeMaterial"
+            android:screenOrientation="landscape"/>
+        <activity
+            android:name=".tabs.SummaryReportActivityTabs"
+            android:theme="@style/AppThemeMaterial"
+            android:screenOrientation="landscape"/>
+        <activity android:name=".tabs.OpenRegisterActivityTabs" android:screenOrientation="landscape"/>
+        <activity android:name=".tabs.DeleteSalesActivityTabs" android:screenOrientation="landscape"/>
+
+        <activity android:name=".tabs.DailyReportDetailTabs" android:screenOrientation="landscape"/>
+
+        <activity android:name=".tabs.ResetPasswordActivityTabs" android:screenOrientation="landscape"/>
+        <!--   END TABS     -->
+
+        <activity android:name=".SplashscreenActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.akukasir.mobile"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/filepaths" />
+        </provider>
+    </application>
+
+</manifest>

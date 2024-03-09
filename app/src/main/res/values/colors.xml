@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#56aab7</color>
+    <color name="colorPrimaryDark">#3B97A5</color>
+    <color name="colorAccent">#333333</color>
+    <color name="colorTextPrimary">#333</color>
+
+    <color name="colorNavigationIcon">#000000</color>
+    <color name="colorNavigationText">#ffffff</color>
+    <color name="colorNavigationBackground">#ffffff</color>
+
+    <color name="menuColor1">#f1f6f7</color>
+    <color name="menuColor2">#fff5f5</color>
+    <color name="menuColor3">#FFF7F2</color>
+    <color name="menuColor4">#f4f3fb</color>
+
+    <color name="overlayColor">#33000000</color>
+
+    <color name="button_filled">#56aab7</color>
+    <color name="button_filled_gradient">#3B97A5</color>
+    <color name="button_filled_grey">#E4E4E4</color>
+    <color name="button_filled_grey_gradient">#A2A2A2</color>
+    <color name="text_grey">#696969</color>
+    <color name="button_filled_orange">#FFD0BE</color>
+    <color name="button_filled_orange_gradient">#E78F63</color>
+    <color name="text_orange">#CF6936</color>
+    <color name="button_filled_purple">#D5C4FF</color>
+    <color name="button_filled_purple_gradient">#875ED8</color>
+    <color name="text_purple">#5A2FAD</color>
+    <color name="button_filled_green">#CBFDC9</color>
+    <color name="button_filled_green_gradient">#4AAA39</color>
+    <color name="text_green">#278A17</color>
+    <color name="button_filled_blue">#B7D7FF</color>
+    <color name="button_filled_blue_gradient">#4782CC</color>
+    <color name="text_blue">#19549E</color>
+    <color name="button_filled_bluesky">#C6F2FF</color>
+    <color name="button_filled_bluesky_gradient">#00ADD5</color>
+    <color name="text_bluesky">#0A83A0</color>
+    <color name="button_filled_red">#FFB5B5</color>
+    <color name="button_filled_red_gradient">#D15656</color>
+    <color name="button_filled_maroon">#A01F1F</color>
+    <color name="button_filled_maroon_gradient">#B62E2E</color>
+    <color name="text_red">#A01F1F</color>
+
+    <color name="background_new">#399983</color>
+
+    <color name="dinein">#fbe6da</color>
+    <color name="takeaway">#fce5e5</color>
+    <color name="delivery">#e0e5e6</color>
+
+    <color name="black">#333333</color>
+    <color name="white">#FFFFFF</color>
+    <color name="error">#c6222a</color>
+    <color name="transparent">#FFFFFFFF</color>
+</resources>

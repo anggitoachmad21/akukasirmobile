@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/background_new"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/tv_popup_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:singleLine="true"
+        android:text="@string/select_customer"
+        android:textColor="@color/colorTextPrimary"
+        android:fontFamily="@font/poppins_regular"/>
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/search_customer"
+        android:layout_width="match_parent"
+        android:layout_height="34dp"
+        android:paddingStart="-10dp"
+        android:paddingEnd="-10dp"
+        android:layout_gravity="center"
+        android:background="@drawable/edittext_border"
+        android:layoutDirection="rtl"
+        android:theme="@style/SearchView"
+        app:defaultQueryHint="@string/search"
+        app:queryBackground="@android:color/transparent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3"
+            android:fontFamily="@font/poppins_regular"
+            android:text="@string/customer_name"
+            android:textColor="@color/colorTextPrimary" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3"
+            android:fontFamily="@font/poppins_regular"
+            android:text="@string/handphone"
+            android:textColor="@color/colorTextPrimary" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3"
+            android:fontFamily="@font/poppins_regular"
+            android:text="Sisa Hutang"
+            android:textColor="@color/colorTextPrimary" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.1"
+            android:fontFamily="@font/poppins_regular"
+            android:textColor="@color/colorPrimary" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/lv_assignment_users"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+</LinearLayout>

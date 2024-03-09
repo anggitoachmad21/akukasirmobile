@@ -1,0 +1,1298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".mobile.OrderDetailActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/top"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@color/background_new"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/ic_logo"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/poppins_regular"
+                android:gravity="center_vertical"
+                android:text="@string/app_name"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="24sp" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/lyt_printer_notification"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/notif_printer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true" />
+
+            <Button
+                android:id="@+id/btn_pair_printer"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/notif_printer"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="12dp"
+                android:background="@drawable/btn_filled"
+                android:onClick="scanPrinter"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:text="@string/pair_printer"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingStart="@dimen/paddingScreen"
+                android:paddingEnd="@dimen/paddingScreen"
+                android:paddingBottom="@dimen/paddingScreen">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/paddingScreen"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="@string/detail_order"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/bill_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="@string/type" />
+
+                            <TextView
+                                android:id="@+id/type"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.7"
+                                android:fontFamily="@font/poppins_regular" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="4dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/poppins_regular"
+                                android:text="@string/shipping_price" />
+
+                            <TextView
+                                android:id="@+id/value_shipping_price"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.7"
+                                android:fontFamily="@font/poppins_regular"
+                                android:visibility="gone" />
+
+                            <EditText
+                                android:id="@+id/shipping_price"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="12dp"
+                                android:background="@drawable/border"
+                                android:ems="10"
+                                android:inputType="number"
+                                android:paddingStart="12dp"
+                                android:paddingTop="4dp"
+                                android:paddingEnd="12dp"
+                                android:paddingBottom="4dp"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:visibility="visible">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/poppins_regular"
+                                android:text="@string/select_logistic" />
+
+                            <TextView
+                                android:id="@+id/value_logistic"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.7"
+                                android:fontFamily="@font/poppins_regular"
+                                android:visibility="gone" />
+
+                            <androidx.appcompat.widget.AppCompatSpinner
+                                android:id="@+id/logistic"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="12dp"
+                                android:background="@drawable/border"
+                                android:spinnerMode="dialog" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins_regular"
+                                android:text="@string/customer" />
+
+                            <TextView
+                                android:id="@+id/customer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/font_regular" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="12dp"
+                                android:fontFamily="@font/poppins_regular"
+                                android:text="@string/notes" />
+
+                            <TextView
+                                android:id="@+id/cust_notes"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="@string/table" />
+
+                            <TextView
+                                android:id="@+id/table"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.4"
+                                android:fontFamily="@font/poppins_regular" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="@string/fee_marketplace" />
+
+                            <TextView
+                                android:id="@+id/value_fee_marketplace"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.7"
+                                android:fontFamily="@font/poppins_regular"
+                                android:visibility="gone" />
+
+                            <EditText
+                                android:id="@+id/fee_marketplace"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/border"
+                                android:ems="10"
+                                android:inputType="number"
+                                android:paddingStart="12dp"
+                                android:paddingTop="8dp"
+                                android:paddingEnd="12dp"
+                                android:paddingBottom="8dp"
+                                android:textSize="14sp" />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="@string/cashier" />
+
+                            <TextView
+                                android:id="@+id/waiter"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.4"
+                                android:fontFamily="@font/poppins_regular" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/paddingScreen"
+                    android:orientation="vertical">
+
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TableRow android:layout_marginBottom="4dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_column="0"
+                                android:layout_weight="0.5"
+                                android:fontFamily="@font/poppins_regular"
+                                android:paddingStart="4dp"
+                                android:paddingEnd="0dp"
+                                android:text="@string/orders"
+                                android:textColor="@android:color/black"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_column="1"
+                                android:layout_weight="0.2"
+                                android:fontFamily="@font/poppins_regular"
+                                android:gravity="center"
+                                android:text="@string/price"
+                                android:textColor="@android:color/black"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_column="2"
+                                android:layout_weight="0.1"
+                                android:fontFamily="@font/poppins_regular"
+                                android:gravity="center"
+                                android:text="@string/qty"
+                                android:textColor="@android:color/black"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_column="2"
+                                android:layout_weight="0.2"
+                                android:fontFamily="@font/poppins_regular"
+                                android:gravity="center"
+                                android:text="@string/total"
+                                android:textColor="@android:color/black"
+                                android:textSize="14sp"
+                                android:visibility="gone" />
+                        </TableRow>
+
+                        <View
+                            android:id="@+id/view2"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="5dp"
+                            android:background="@drawable/line" />
+
+                        <TableLayout
+                            android:id="@+id/tableLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:padding="5dp" />
+
+                    </TableLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingStart="@dimen/paddingScreen"
+                android:paddingEnd="@dimen/paddingScreen"
+                android:paddingBottom="@dimen/paddingScreen">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="6dp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="@string/total_order"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/total_order"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_regular" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="@string/subtotal" />
+
+                            <TextView
+                                android:id="@+id/subtotal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/poppins_regular" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="@string/discount" />
+
+                            <TextView
+                                android:id="@+id/discount"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/poppins_regular" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="@string/shipping_price" />
+
+                            <TextView
+                                android:id="@+id/total_shipping_price"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/poppins_regular" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="@string/fee_marketplace" />
+
+                            <TextView
+                                android:id="@+id/service_charge"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/poppins_regular" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.4"
+                        android:orientation="vertical">
+
+                        <View
+                            android:layout_width="wrap_content"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="@dimen/spaceBottom"
+                            android:background="@drawable/line" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spaceBottom"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="12dp"
+                                android:text="@string/subtotal_with_shipping" />
+
+                            <TextView
+                                android:id="@+id/subtotal_after_discount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins_regular" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="2dp"
+                                android:text="@string/ppn" />
+
+                            <TextView
+                                android:id="@+id/ppn_percent"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="12dp" />
+
+                            <TextView
+                                android:id="@+id/ppn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins_regular" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/spaceBottom"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="12dp"
+                                android:fontFamily="@font/font_regular"
+                                android:text="@string/total_payable"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:id="@+id/total_payable"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins_regular"
+                                android:textSize="18sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:id="@+id/update_order2"
+                                style="@style/Widget.AppCompat.Button.Borderless"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="6dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/btn_filled"
+                                android:fontFamily="@font/poppins_regular"
+                                android:onClick="splitBill"
+                                android:text="@string/split_bill"
+                                android:textAllCaps="false"
+                                android:textColor="@color/white"
+                                android:textSize="14sp" />
+
+                            <Button
+                                android:id="@+id/direct_invoice"
+                                style="@style/Widget.AppCompat.Button.Borderless"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="6dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/btn_filled"
+                                android:fontFamily="@font/poppins_regular"
+                                android:onClick="invoiceDirect"
+                                android:text="@string/print_bill"
+                                android:textAllCaps="false"
+                                android:textColor="@color/white"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/lyt_share_invoice"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <Button
+                                android:id="@+id/share_invoice"
+                                style="@style/Widget.AppCompat.Button.Borderless"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/btn_filled"
+                                android:fontFamily="@font/poppins_regular"
+                                android:text="@string/share_invoice"
+                                android:textAllCaps="false"
+                                android:textColor="@color/white"
+                                android:textSize="14sp" />
+
+                            <LinearLayout
+                                android:id="@+id/lyt_invoice"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/white"
+                                android:orientation="vertical"
+                                android:padding="12dp">
+
+                                <ImageView
+                                    android:id="@+id/logo_invoice"
+                                    android:layout_width="120dp"
+                                    android:layout_height="120dp"
+                                    android:layout_gravity="center"
+                                    android:visibility="gone" />
+
+                                <TextView
+                                    android:id="@+id/header_invoice"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@color/white"
+                                    android:orientation="horizontal"
+                                    android:visibility="visible"
+                                    android:padding="5dp">
+
+                                    <TextView
+                                        android:text="No Invoice"
+                                        android:layout_width="wrap_content"
+                                        android:layout_weight="1"
+                                        android:layout_height="wrap_content" />
+                                    <TextView
+                                        android:id="@+id/no_invoice"
+                                        android:text="No Invoice"
+                                        android:layout_weight="1"
+                                        android:layout_gravity="right"
+                                        android:gravity="right"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content" />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@color/white"
+                                    android:orientation="horizontal"
+                                    android:visibility="visible"
+                                    android:padding="5dp">
+
+                                    <TextView
+                                        android:text="Tanggal"
+                                        android:layout_width="wrap_content"
+                                        android:layout_weight="1"
+                                        android:layout_height="wrap_content" />
+                                    <TextView
+                                        android:id="@+id/date_invoice"
+                                        android:text="Tanggal"
+                                        android:layout_weight="1"
+                                        android:layout_gravity="right"
+                                        android:gravity="right"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content" />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@color/white"
+                                    android:orientation="horizontal"
+                                    android:visibility="visible"
+                                    android:padding="5dp">
+
+                                    <TextView
+                                        android:text="Nama Kasir"
+                                        android:layout_width="wrap_content"
+                                        android:layout_weight="1"
+                                        android:layout_height="wrap_content" />
+                                    <TextView
+                                        android:id="@+id/name_of_cashier"
+                                        android:text="Nama Kasir"
+                                        android:layout_weight="1"
+                                        android:layout_gravity="right"
+                                        android:gravity="right"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content" />
+                                </LinearLayout>
+                                <ImageView
+                                    android:id="@+id/viewas"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="10dp"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginBottom="5dp" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@color/white"
+                                    android:orientation="vertical"
+                                    android:visibility="visible"
+                                    android:padding="5dp">
+                                    <TableLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <TableLayout
+                                            android:id="@+id/tableLayoutInvoice"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:orientation="vertical"
+                                             />
+
+                                    </TableLayout>
+                                </LinearLayout>
+                                <ImageView
+                                    android:id="@+id/viewasd"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="10dp"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginBottom="5dp" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@color/white"
+                                    android:orientation="horizontal"
+                                    android:visibility="visible"
+                                    android:padding="5dp">
+
+                                    <TextView
+                                        android:text="Harga"
+                                        android:layout_width="wrap_content"
+                                        android:layout_weight="1"
+                                        android:layout_height="wrap_content" />
+                                    <TextView
+                                        android:id="@+id/price_invoice"
+                                        android:text="Harga"
+                                        android:layout_weight="1"
+                                        android:layout_gravity="right"
+                                        android:gravity="right"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@color/white"
+                                    android:orientation="horizontal"
+                                    android:visibility="visible"
+                                    android:padding="5dp">
+
+                                    <TextView
+                                        android:id="@+id/text_discount_invoice"
+                                        android:text="Diskon"
+                                        android:layout_width="wrap_content"
+                                        android:layout_weight="1"
+                                        android:layout_height="wrap_content" />
+                                    <TextView
+                                        android:id="@+id/discount_invoice"
+                                        android:text="Diskon"
+                                        android:layout_weight="1"
+                                        android:layout_gravity="right"
+                                        android:gravity="right"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content" />
+                                </LinearLayout>
+                                <ImageView
+                                    android:id="@+id/viewasdf"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="10dp"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginBottom="5dp" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@color/white"
+                                    android:orientation="horizontal"
+                                    android:visibility="visible"
+                                    android:padding="5dp">
+
+                                    <TextView
+                                        android:text="Pembayaran"
+                                        android:layout_width="wrap_content"
+                                        android:layout_weight="1"
+                                        android:layout_height="wrap_content" />
+                                    <TextView
+                                        android:id="@+id/pay_invoice"
+                                        android:text="Pembayaran"
+                                        android:layout_weight="1"
+                                        android:layout_gravity="right"
+                                        android:gravity="right"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content" />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@color/white"
+                                    android:orientation="horizontal"
+                                    android:visibility="visible"
+                                    android:padding="5dp">
+
+                                    <TextView
+                                        android:text="Kembalian"
+                                        android:layout_width="wrap_content"
+                                        android:layout_weight="1"
+                                        android:layout_height="wrap_content" />
+                                    <TextView
+                                        android:id="@+id/return_invoice"
+                                        android:text="Kembalian"
+                                        android:layout_weight="1"
+                                        android:layout_gravity="right"
+                                        android:gravity="right"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content" />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@color/white"
+                                    android:orientation="horizontal"
+                                    android:visibility="visible"
+                                    android:padding="5dp">
+
+                                    <TextView
+                                        android:text="Catatan"
+                                        android:layout_width="wrap_content"
+                                        android:layout_weight="1"
+                                        android:layout_height="wrap_content" />
+                                    <TextView
+                                        android:id="@+id/notes_invoice"
+                                        android:text="Catatan"
+                                        android:layout_weight="1"
+                                        android:layout_gravity="right"
+                                        android:gravity="right"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content" />
+                                </LinearLayout>
+                                <TextView
+                                    android:id="@+id/footer_invoice"
+                                    android:layout_marginTop="20dp"
+                                    android:layout_width="match_parent"
+                                    android:text="Hai"
+                                    android:gravity="center"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:id="@+id/body_invoice"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:visibility="visible"/>
+                            </LinearLayout>
+                            <ImageView
+                                android:id="@+id/invoice_img"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/lyt_remaining"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="12dp"
+                                    android:fontFamily="@font/font_regular"
+                                    android:text="@string/already_paid"
+                                    android:textSize="14sp" />
+
+                                <TextView
+                                    android:id="@+id/already_paid"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:textSize="18sp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="12dp"
+                                    android:fontFamily="@font/font_regular"
+                                    android:text="@string/remaining_payment"
+                                    android:textSize="14sp" />
+
+                                <TextView
+                                    android:id="@+id/remaining_payment"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:textSize="18sp" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/lyt_payment"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spaceBottom"
+                            android:orientation="vertical"
+                            android:visibility="visible">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/spaceBottom"
+                                android:background="@drawable/border"
+                                android:paddingStart="16dp"
+                                android:paddingEnd="16dp">
+
+                                <TextView
+                                    android:id="@+id/label_payment"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/spaceBottom"
+                                    android:layout_marginBottom="@dimen/spaceBottom"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:text="@string/payment_method" />
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/recycler_payment_method"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/label_payment" />
+                            </RelativeLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal">
+
+                                    <Button
+                                        android:id="@+id/duaribu"
+                                        style="@style/Widget.AppCompat.Button.Borderless"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginEnd="6dp"
+                                        android:layout_marginBottom="@dimen/spaceBottom"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/btn_filled_grey"
+                                        android:fontFamily="@font/poppins_regular"
+                                        android:onClick="duaRibu"
+                                        android:text="@string/duarebu"
+                                        android:textColor="#555555"
+                                        android:textSize="14sp" />
+
+                                    <Button
+                                        android:id="@+id/limaribu"
+                                        style="@style/Widget.AppCompat.Button.Borderless"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="6dp"
+                                        android:layout_marginEnd="6dp"
+                                        android:layout_marginBottom="@dimen/spaceBottom"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/btn_filled_orange"
+                                        android:fontFamily="@font/poppins_regular"
+                                        android:onClick="limaRibu"
+                                        android:text="@string/goceng"
+                                        android:textColor="#CC5519"
+                                        android:textSize="14sp" />
+
+                                    <Button
+                                        android:id="@+id/sepuluhribu"
+                                        style="@style/Widget.AppCompat.Button.Borderless"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="6dp"
+                                        android:layout_marginBottom="@dimen/spaceBottom"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/btn_filled_purple"
+                                        android:fontFamily="@font/poppins_regular"
+                                        android:onClick="sepuluhRibu"
+                                        android:text="@string/ceban"
+                                        android:textColor="#3F1988"
+                                        android:textSize="14sp" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="0.9"
+                                    android:orientation="horizontal">
+
+                                    <Button
+                                        android:id="@+id/duapuluhribu"
+                                        style="@style/Widget.AppCompat.Button.Borderless"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginEnd="6dp"
+                                        android:layout_marginBottom="@dimen/spaceBottom"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/btn_filled_green"
+                                        android:fontFamily="@font/poppins_regular"
+                                        android:onClick="duapuluhRibu"
+                                        android:text="@string/duapuluhrebu"
+                                        android:textColor="#0A522D"
+                                        android:textSize="14sp" />
+
+                                    <Button
+                                        android:id="@+id/limapuluhribu"
+                                        style="@style/Widget.AppCompat.Button.Borderless"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="6dp"
+                                        android:layout_marginEnd="6dp"
+                                        android:layout_marginBottom="@dimen/spaceBottom"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/btn_filled_blue"
+                                        android:fontFamily="@font/poppins_regular"
+                                        android:onClick="limapuluhRibu"
+                                        android:text="@string/gocap"
+                                        android:textColor="#103472"
+                                        android:textSize="14sp" />
+
+                                    <Button
+                                        android:id="@+id/seratusribu"
+                                        style="@style/Widget.AppCompat.Button.Borderless"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="6dp"
+                                        android:layout_marginBottom="@dimen/spaceBottom"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/btn_filled_red"
+                                        android:fontFamily="@font/poppins_regular"
+                                        android:onClick="seratusRibu"
+                                        android:text="@string/cepe"
+                                        android:textColor="#7E1418"
+                                        android:textSize="14sp" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="horizontal">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginEnd="6dp"
+                                        android:layout_weight="1"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/poppins_regular"
+                                            android:text="@string/given_amount" />
+
+                                        <EditText
+                                            android:id="@+id/given_amount"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="8dp"
+                                            android:layout_marginBottom="@dimen/spaceBottom"
+                                            android:background="@drawable/edittext_border"
+                                            android:ems="10"
+                                            android:inputType="number" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="6dp"
+                                        android:layout_weight="1"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/poppins_regular"
+                                            android:text="@string/change_amount" />
+
+                                        <EditText
+                                            android:id="@+id/change_amount"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="8dp"
+                                            android:layout_marginBottom="@dimen/spaceBottom"
+                                            android:background="@drawable/edittext_border"
+                                            android:ems="10"
+                                            android:focusableInTouchMode="false"
+                                            android:inputType="number" />
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/lyt_notes"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginEnd="6dp"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical"
+                                    android:visibility="gone">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/poppins_regular"
+                                        android:text="@string/notes" />
+
+                                    <EditText
+                                        android:id="@+id/notes"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="8dp"
+                                        android:layout_marginBottom="@dimen/spaceBottom"
+                                        android:background="@drawable/edittext_border"
+                                        android:ems="10"
+                                        android:inputType="text" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <Button
+                                    android:id="@+id/print_bill"
+                                    style="@style/Widget.AppCompat.Button.Borderless"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="6dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/btn_filled"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:text="@string/print_bill_close_order"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/white"
+                                    android:textSize="14sp" />
+
+                                <Button
+                                    android:id="@+id/update_order"
+                                    style="@style/Widget.AppCompat.Button.Borderless"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="6dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/btn_filled"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:onClick="updateOrder"
+                                    android:text="@string/update_order"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/white"
+                                    android:textSize="14sp" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/lyt_alert"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spaceBottom"
+                    android:animateLayoutChanges="true"
+                    android:background="@drawable/alert_error"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <ImageButton
+                        android:id="@+id/btn_close_alert"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:background="@android:color/transparent"
+                        android:contentDescription="@string/warning"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_close" />
+
+                    <TextView
+                        android:id="@+id/txt_alert"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:textColor="@color/colorTextPrimary"
+                        android:textSize="12sp"
+                        tools:ignore="RelativeOverlap" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

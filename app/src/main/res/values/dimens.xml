@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="paddingScreen">20dp</dimen>
+    <dimen name="spaceBottom">12dp</dimen>
+    <dimen name="img_width_height">48dp</dimen>
+    <dimen name="img_width_height_lg">72dp</dimen>
+    <dimen name="img_padding_check">10dp</dimen>
+    <dimen name="img_padding_check_alt">12dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+</resources>

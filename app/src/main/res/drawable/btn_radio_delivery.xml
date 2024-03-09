@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_checked="true">
+        <layer-list>
+            <item>
+                <shape android:shape="rectangle" android:padding="80dp">
+                    <solid
+                        android:color="@color/delivery" />
+
+                    <padding
+                        android:bottom="@dimen/img_padding_check_alt"
+                        android:left="@dimen/img_padding_check_alt"
+                        android:right="@dimen/img_padding_check_alt"
+                        android:top="@dimen/img_padding_check_alt" />
+
+                    <size
+                        android:height="@dimen/img_width_height"
+                        android:width="@dimen/img_width_height"/>
+
+                    <corners android:radius="64dp" />
+                </shape>
+            </item>
+
+            <item android:drawable="@drawable/ic_delivery"/>
+        </layer-list>
+    </item>
+    <item>
+        <layer-list>
+            <item>
+                <shape android:shape="rectangle" android:padding="80dp">
+                    <stroke
+                        android:width="2dp"
+                        android:color="@android:color/transparent" />
+
+                    <padding
+                        android:bottom="@dimen/img_padding_check"
+                        android:left="@dimen/img_padding_check"
+                        android:right="@dimen/img_padding_check"
+                        android:top="@dimen/img_padding_check" />
+
+                    <size
+                        android:height="@dimen/img_width_height"
+                        android:width="@dimen/img_width_height"/>
+
+                    <corners android:radius="64dp" />
+                </shape>
+            </item>
+
+            <item android:drawable="@drawable/ic_delivery"/>
+        </layer-list>
+    </item>
+</selector>
